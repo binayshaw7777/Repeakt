@@ -1,4 +1,6 @@
 import com.varabyte.kobweb.gradle.application.util.configAsKobwebApplication
+import kotlinx.html.link
+import org.jetbrains.kotlin.com.intellij.openapi.util.text.HtmlChunk.link
 
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
@@ -13,7 +15,19 @@ version = "1.0-SNAPSHOT"
 kobweb {
     app {
         index {
-            description.set("Powered by Kobweb")
+            description.set("Repeakt")
+            head.add {
+                link(rel = "preconnect", href = "https://fonts.googleapis.com")
+                link(rel = "preconnect", href = "https://fonts.gstatic.com") { attributes["crossorigin"] = "" }
+                link(
+                    href = "https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap",
+                    rel = "stylesheet"
+                )
+                link(
+                    href = "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Inter:wght@100..900&family=Syne&display=swap",
+                    rel = "stylesheet"
+                )
+            }
         }
     }
 }
