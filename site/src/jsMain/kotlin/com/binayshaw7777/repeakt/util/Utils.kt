@@ -11,8 +11,8 @@ object Utils {
         return buildString {
             repeat(numberOfRepeats) {
                 append(text)
-                if (addSpace) append(" ")
                 if (separator.isNotEmpty()) append(separator)
+                if (addSpace) append(" ")
                 if (addNewLine) appendLine()
             }
         }

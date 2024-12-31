@@ -31,7 +31,6 @@ object Constants {
     val CardInputLayoutStyle = CssStyle {
         base {
             Modifier
-                .fillMaxWidth()
                 .background(Background.of(image = CardColor))
                 .borderRadius(20.px)
                 .padding(20.px)
